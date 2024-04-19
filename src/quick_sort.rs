@@ -12,10 +12,10 @@ fn partition<T: Ord>(arr: &mut [T]) -> usize {
     let pivot = &arr[arr.len() / 2];
     let (mut i, mut j) = (0, arr.len() - 1);
     while i <= j {
-        while arr[i] < pivot {
+        while arr[i] < *pivot {
             i += 1;
         }
-        while arr[j] > pivot {
+        while arr[j] > *pivot {
             j -= 1;
         }
         if i <= j {
